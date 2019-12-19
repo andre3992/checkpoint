@@ -23,3 +23,28 @@ The final array should look something like this:
     26-100
 ]
 */
+let seats = [];
+let row = [];
+let numberSeats = 0;
+let numberRow = 0;
+let rowSeat = [];
+
+for (let i = 0; i < 100; i++) {
+    numberSeats += 1;
+    seats.push(numberSeats)
+};
+
+for (let i = 0; i < 26; i++) {
+    numberRow += 1;
+    row.push(numberRow)
+};
+
+seat = () => {
+    for (let i = 0; i < row.length; i++) {
+        for (let a = 0; a < seats.length; a++) {
+            rowSeat.push(row[i] + "-" + seats[a])
+        }
+    }
+    return (rowSeat)
+
+}
