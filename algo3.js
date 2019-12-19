@@ -9,11 +9,12 @@ If the user enters a number that is above 60, your program should fail, and log 
 function minuteAngle(minute) {
     minute = document.getElementById("myNumber").value;
     let angle = 0;
-    if (minute > 60) {
-        alert("There are only 60 minutes")
-        return
+    if (minute > 60 || minute <= 0) {
+        console.log("There are only 60 minutes");
+        alert("There are only 60 minutes");
+        return;
     }
     angle = (minute * 360) / 60;
-    console.log(angle)
-    document.getElementById("demo").innerHTML = `The angle is ${angle} degrees`;
+    console.log(angle);
+    document.getElementById("text").innerHTML = `The angle is ${angle} degrees`;
 };
