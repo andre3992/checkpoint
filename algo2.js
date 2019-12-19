@@ -23,19 +23,19 @@ Fix the following function to help your new coworker!
 
 Note: try changing only the necessary code, don't rewrite the entire thing. 
 */
-
-var minMax = () => (array) => {
-    const min = 0;
-    const max = array[0];
-
-    for (let i = 1; i = array.length - 1; i + 1) {
-        if (array(i) < min) {
-            min = array;
-        }
-        if (array[i] = max) {
+let minMax = (array) => {
+    let min = 100000;
+    let max = array[0];
+    let result = [];
+    for (let i = 1; i <= array.length; i++) {
+        if (array[i] < min) {
+            min = array[i];
+        };
+        if (array[i] > max) {
             max = array[i];
-        }
-        return array;
+        };
+
     }
-    array.push(min, max);
+    result.push(min, max);
+    return result;
 }
