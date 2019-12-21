@@ -6,15 +6,20 @@ If the user enters a number that is above 60, your program should fail, and log 
 (Hint: Create an HTML UI to capture input and display the result of running you algorithm)
 */
 
-function minuteAngle(minute) {
-    minute = document.getElementById("myNumber").value;
-    let angle = 0;
+function minuteAngle(minute) { // You could have used two functions. one for the minuteAngle, another for the event listener
     if (minute > 60 || minute <= 0) {
-        console.log("There are only 60 minutes");
+        // console.log("There are only 60 minutes"); No need for the console.log
         alert("There are only 60 minutes");
         return;
     }
-    angle = (minute * 360) / 60;
-    console.log(angle);
-    document.getElementById("text").innerHTML = `The angle is ${angle} degrees`;
+    const angle = (minute * 360) / 60;
+    // console.log(angle); No need for the console.log
+    return angle; // Missing the return statement
 };
+
+const textElement = document.getElementById("text");
+document.getElementById('getAngle').addEventListener('click', () => { // add the event listener on click, for the button
+    const minute = document.getElementById("myNumber").value;
+    const angle = minuteAngle(minute);
+    textElement.innerHTML = `The angle is ${angle} degrees`;
+});
