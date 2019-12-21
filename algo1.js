@@ -23,28 +23,28 @@ The final array should look something like this:
     26-100
 ]
 */
-let seats = [];
-let row = [];
-let numberSeats = 0;
-let numberRow = 0;
-let rowSeat = [];
+const seats = []; // We don't change the reference. This can be a constant
+const row = []; // We don't change the reference. This can be a constant
+let numberSeats = 0; // If you don't use this variable outside of the for, you could use the i to your advantage
+let numberRow = 0; // If you don't use this variable outside of the for, you could use the i to your advantage
+const rowSeat = []; // We don't change the reference. This can be a constant
 
 for (let i = 0; i < 100; i++) {
-    numberSeats += 1;
-    seats.push(numberSeats)
+    numberSeats += 1; // You could drop the use of numberSeats if you start i at 1 and loop until i <= 100
+    seats.push(numberSeats); // Missing semicolon
 };
 
 for (let i = 0; i < 26; i++) {
-    numberRow += 1;
-    row.push(numberRow)
+    numberRow += 1; // You could drop the use of numberRow if you start i at 1 and loop until i <= 26
+    row.push(numberRow); // Missing semicolon
 };
 
-seat = () => {
+const seat = () => { // missing variable declaration
     for (let i = 0; i < row.length; i++) {
         for (let a = 0; a < seats.length; a++) {
-            rowSeat.push(row[i] + "-" + seats[a])
+            rowSeat.push(row[i] + "-" + seats[a]); // missing semicolon
         }
     }
-    return (rowSeat)
+    return rowSeat; // Missing semicolon. No need for () around the return expression.
 
 }
